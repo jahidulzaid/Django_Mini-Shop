@@ -1,0 +1,12 @@
+<h2>Products</h2>
+<ul>
+    {% for product in products %}
+    <li>
+        <a href="{% url 'product_detail' product.id %}">
+            <img src="{{ product.image.url }}" width="100">
+            {{ product.name }} - ৳{{ product.price }}
+        </a>
+        <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+    </li>
+    {% endfor %}
+</ul>
